@@ -24,7 +24,7 @@
        PROCEDURE DIVISION.
        P-START.
 
-            INITIALISE WS-LEARNING
+            INITIALIZE WS-LEARNING
                        WS-STUDENT-NAME
                        WS-I.
 
