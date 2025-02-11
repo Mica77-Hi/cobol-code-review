@@ -44,6 +44,7 @@
        P-START-END.
 
        P-DEFINE-NOTES.
+
             ADD 1 TO WS-I.
 
             DISPLAY "INSERT " WS-I "st GRADE: ".
@@ -58,7 +59,6 @@
                 WHEN WS-I EQUAL 4
                      ACCEPT WS-NOTE-4 OF WS-LEARNING
             END-EVALUATE.
-
 
        P-DEFINE-NOTES-END.
 
@@ -79,7 +79,7 @@
                 DISPLAY '***************************************'
                 DISPLAY '*   GRADE INVALID, PLEASE TRY AGAIN   *'
                 DISPLAY '***************************************'
-                PERFORM P-START THRU P-START-END
+                PERFORM P-START THRU P-START-END.
             END-IF.
 
             IF WS-NOTE-3 IS <= 0
@@ -136,7 +136,7 @@
                 PERFORM P-START THRU P-START-END.
 
             IF WS-RPT IS EQUAL 'N' OR WS-RPT IS EQUAL 'n'
-                PERFORM P-STOP-PGM THRU P-STOP-PGM-END.
+                PERFORM P-STOP-PGM THRU P-STOP-PGM-END
 
        P-REPEAT-END.
 
