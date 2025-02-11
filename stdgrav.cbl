@@ -1,27 +1,24 @@
-      *****************************************************************
-      *              STDGRAV.CBL - a COBOL GRADE AVERAGE              *
-      *                Copyright (C) 2022 RAPHAEL FREI                *
-      *                     All Rights Reserved                       *
-      *           LinkedIn: linkedin.com/in/raphaelrfrei/             *
-      *           GitHub: https://github.com/raphaelfrei/             *
-      *****************************************************************
        IDENTIFICATION DIVISION.
        PROGRAM-ID. STDGRAV.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SOURCE-COMPUTER IBM-370.
+      *SOURCE-COMPUTER IBM-370 WITH DEBUGGING MODE.
        DATA DIVISION.
        FILE SECTION.
        WORKING-STORAGE SECTION.
 
-       77 WS-STUDENT-NAME     PIC X(15).
-       77 WS-I                PIC 9(01).
-       77 WS-RPT              PIC X(01).
+       88 WS-STUDENT-NAME     PIC X(15).
+       88 WS-I                PIC 9(01).
+       88 WS-RPT              PIC X(01).
 
        01 WS-LEARNING.
           02 WS-LEARNING      PIC X(10).
-          02 WS-MEDIA         PIC 9(02)V99.
+          02 WS-MEDIA           PIC 9(02)V99.
           02 WS-RESULT        PIC X(10).
           02 WS-NOTE-1        PIC 9(02).
           02 WS-NOTE-2        PIC 9(02).
-          02 WS-NOTE-3        PIC 9(02).
+          02 WS-NOTE-3         PIC 9(02).
           02 WS-NOTE-4        PIC 9(02).
 
        PROCEDURE DIVISION.
@@ -54,10 +51,10 @@
             EVALUATE TRUE
                 WHEN WS-I EQUAL 1
                      ACCEPT WS-NOTE-1 OF WS-LEARNING
-                WHEN WS-I EQUAL 2
+                 WHEN WS-I EQUAL 2
                      ACCEPT WS-NOTE-2 OF WS-LEARNING
                 WHEN WS-I EQUAL 3
-                     ACCEPT WS-NOTE-3 OF WS-LEARNING
+                   ACCEPT WS-NOTE-3 OF WS-LEARNING
                 WHEN WS-I EQUAL 4
                      ACCEPT WS-NOTE-4 OF WS-LEARNING
             END-EVALUATE.
@@ -113,6 +110,8 @@
                    (WS-NOTE-1 OF WS-LEARNING + WS-NOTE-2 OF WS-LEARNING
                    + WS-NOTE-3 OF WS-LEARNING + WS-NOTE-4 OF WS-LEARNING)
                    / 4.
+
+            DISPLAY WS-MEDIA.
 
             IF WS-MEDIA GREATER THAN OR EQUAL 7 THEN
                 MOVE 'APPROVED' TO WS-RESULT
