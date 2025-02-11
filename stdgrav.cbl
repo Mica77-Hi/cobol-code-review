@@ -39,7 +39,7 @@
 
             PERFORM P-CALCULATE         THRU P-CALCULATE-END.
 
-            PERFORM P-REPETE          THRU P-REPETE-END.
+            PERFORM P-REPEAT          THRU P-REPEAT-END.
 
        P-START-END.
 
@@ -128,7 +128,7 @@
 
        P-CALCULATE-END.
 
-       P-REPETE.
+       P-REPEAT.
             DISPLAY 'REPEAT? (Y/N)'
             ACCEPT WS-RPT
 
@@ -138,7 +138,7 @@
             IF WS-RPT IS EQUAL 'N' OR WS-RPT IS EQUAL 'n'
                 PERFORM P-STOP-PGM THRU P-STOP-PGM-END.
 
-       P-REPETE-END.
+       P-REPEAT-END.
 
        P-STOP-PGM.
            STOP RUN.
