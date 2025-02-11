@@ -15,7 +15,7 @@
        01 WS-LEARNING.
           02 WS-LEARNING      PIC X(10).
           02 WS-MEDIA           PIC 9(02)V99.
-          02 WS-RESULT        PIC X(10).
+          02 WS-RESULT        PIC X(10) VALUE 0.
           02 WS-NOTE-1        PIC 9(02).
           02 WS-NOTE-2        PIC 9(02).
           02 WS-NOTE-3         PIC 9(02).
